@@ -1,0 +1,29 @@
+{
+  "name": "steemitresteemapplication",
+  "version": "1.0.0",
+  "description": "This is SteemitResteemApplication, which allow you to Resteem Steemit Posts of Selected users automatically. This application has been built using NodeJs, steemJs, Javascript",
+  "main": "app.js",
+  "scripts": {
+    "test": "console.log('hello...')"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/touhidalam69/SteemitResteemApplication.git"
+  },
+  "keywords": [
+    "steemit",
+    "resteem",
+    "steemjs",
+    "steemdev",
+    "nodejs"
+  ],
+  "author": "touhid alam",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/touhidalam69/SteemitResteemApplication/issues"
+  },
+  "homepage": "https://github.com/touhidalam69/SteemitResteemApplication#readme",
+  "dependencies": {
+    "steemjs": "^0.7.1"
+  }
+}
