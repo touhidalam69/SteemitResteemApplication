@@ -38,5 +38,5 @@ This is Resteem post application of Steemit, which allow you to Resteem Steemit 
 
 ### [Demonstration Images added on Installation Folder in Details]
 
-### Transaction Log
+### Resteemed Log
 #### 1. Application will generate resteemed Log for every single Resteemed data which you can find on resteemed.JSON file.
