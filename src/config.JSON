@@ -1,5 +1,15 @@
 {
     "sender_account": "",
     "private_posting_key": "",
-    "userlist":["ned", "touhidalam69"]
+    "userlist": [
+        "ned",
+        "touhidalam69"
+    ],
+    "taglist": [
+        "open-source",
+        "utopian-io",
+        "travel",
+        "photography"
+    ],
+    "resteemby": "taglist"
 }

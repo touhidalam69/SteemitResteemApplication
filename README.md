@@ -2,7 +2,7 @@
 
 ### About this Project
 
-This is Resteem post application of Steemit, which allow you to Resteem Steemit Posts of Selected users automatically. This application has been built using NodeJs, steemJs, Linqjs and Javascript
+This is Resteem post application of Steemit, which allow users to Resteem Steemit Posts of Selected users automatically. He can also resteem post by it's tag. This application has been built using NodeJs, steemJs, Linqjs and Javascript
 
 
 
@@ -25,6 +25,10 @@ This is Resteem post application of Steemit, which allow you to Resteem Steemit 
 
 ###### 	c. Put userlist.
 
+###### 	c. Put taglist.
+
+###### 	c. Put resteemby. ("taglist" for taglist wise and "userlist" for userlist wise)
+
 
 
 #### 3. Run the application from Command Prompt
@@ -39,4 +43,6 @@ This is Resteem post application of Steemit, which allow you to Resteem Steemit 
 ### [Demonstration Images added on Installation Folder in Details]
 
 ### Resteemed Log
-#### 1. Application will generate resteemed Log for every single Resteemed data which you can find on resteemed.JSON file.
+##### 1. Application will generate resteemed Log for every single Resteemed data which you can find on resteemed.JSON file.
+
+##### 2. Application will generate resteemed Error Log which you can find on resteemedError.JSON file.
