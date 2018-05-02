@@ -1,9 +1,13 @@
 const fs = require("fs");
 const steem = require('steem');
+const rlinq = require('linq');
 
 var preresteemed = [];
 
 config = JSON.parse(fs.readFileSync("config.json"));
+
+
+var userlistforResteem = config.userlist;
 
 if (fs.existsSync('resteemed.json')) {
     const resteemed = JSON.parse(fs.readFileSync("resteemed.json"));
@@ -13,16 +17,17 @@ if (fs.existsSync('resteemed.json')) {
 }
 
 console.log('Application Initialized...');
-setInterval(resteemPost, 300000);
+//setInterval(resteemPost, 300000);
 resteemPost();
+
 function resteemPost() {
     var username = config.sender_account;
     var wif = config.private_posting_key;
-    var userlistforResteem = config.userlist;
+
     for (var i = 0; i < userlistforResteem.length; i++) {
         steem.api.getDiscussionsByBlog({ tag: userlistforResteem[i], limit: 1 }, function (err, result) {
             if (err === null) {
-                if (result.length > 0) {
+                if (result.length > 0 && IsValidPost(result[0].author, result[0].permlink)) {
                     const json = JSON.stringify(['reblog', {
                         account: username,
                         author: result[0].author,
@@ -40,6 +45,20 @@ function resteemPost() {
                 }
             }
         });
+    }
+}
+
+function IsValidPost(author, permlink) {
+    if (rlinq.from(userlistforResteem).where(x => x == author).toArray().length == 0) {
+        console.log('Post of different author !!!');
+        return false;
+    }
+    else if (rlinq.from(preresteemed).where(x => x.permlink == permlink).toArray().length > 0) {
+        console.log('Already Resteemed !!!');
+        return false;
+    }
+    else {
+        return true;
     }
 }
 
